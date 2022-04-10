@@ -34,18 +34,45 @@ public class P8_String {
 
 class QuestionsOnString {
 
-	void palindromeOrNot(String s) {
-		// Write Logic Here!
+	void palindromeOrNot(String str) {
+		 int i = 0, j = str.length() - 1;
+		 
+	        
+	        while (i < j) {
+	            if (str.charAt(i) != str.charAt(j))
+	                System.out.println("string is not palindrome");
+	           
+	            i++;
+	            j--;
+	        }
+	        System.out.println("string is palindrome");
 
 	}
 
-	void reverseOfAString(String s) {
-		// Write Logic Here!
+	void reverseOfAString(String input) {
+		 char[] temparray = input.toCharArray();
+	        int left, right = 0;
+	        right = temparray.length - 1;
+	 
+	        for (left = 0; left < right; left++, right--) {
+	            char temp = temparray[left];
+	            temparray[left] = temparray[right];
+	            temparray[right] = temp;
+	        }
+	 
+	        for (char c : temparray)
+	            System.out.print(c);
+	        System.out.println();
 
 	}
 	
 	void stringEqualOrNot(String s1,String s2) {
-		// Write Logic Here!
-		
+		if(s1==s2) {
+			System.out.println("strings are equal");
+		}
+		else
+		{
+			System.out.println("strings are not equal");
+		}
 	}
 }
